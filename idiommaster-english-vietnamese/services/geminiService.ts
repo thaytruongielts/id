@@ -4,8 +4,8 @@ import { AIExplanation } from "../types";
 
 export const fetchIdiomExplanation = async (idiomEn: string, idiomVn: string): Promise<AIExplanation | null> => {
   try {
-    // Always use const ai = new GoogleGenAI({apiKey: process.env.API_KEY});
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    // Always use const ai = new GoogleGenAI({apiKey: process.env.GEMINI_API_KEY});
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: `Provide a detailed explanation for the English idiom: "${idiomEn}". It means "${idiomVn}" in Vietnamese.`,
